@@ -68,41 +68,41 @@ llm = HuggingFaceEndpoint(
 # chat_model = ChatHuggingFace(llm=llm)
 
 # st.write(llm)
-messages_container = st.container(height=350)
+# messages_container = st.container(height=350)
 
 
-if prompt := st.chat_input(f"Ask  {llm.model.split('/')[-1]}"):
-    st.session_state.messages.append({"role": "user", "content": prompt})
-    response = llm(prompt)
-    st.session_state.messages.append({"role": "assistant", "content": response})
+# if prompt := st.chat_input(f"Ask  {llm.model.split('/')[-1]}"):
+#     st.session_state.messages.append({"role": "user", "content": prompt})
+#     response = llm(prompt)
+#     st.session_state.messages.append({"role": "assistant", "content": response})
 
-for message in st.session_state.messages:
-    messages_container.chat_message(message["role"]).write(message["content"])
+# for message in st.session_state.messages:
+#     messages_container.chat_message(message["role"]).write(message["content"])
 
 
                             
 
 # with messages_container:
 
-#     # Display chat messages from history on app rerun
-#     for message in st.session_state.messages:
-#         with st.chat_message(message["role"]):
-#             st.markdown(message["content"])
+    # Display chat messages from history on app rerun
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
 
 
-# # React to user input
-# if prompt := st.chat_input(f"Ask  {llm.model.split('/')[-1]}"):
-#     # Display user message in chat message container
-#     st.chat_message("user").markdown(prompt)
-#     # Add user message to chat history
-#     st.session_state.messages.append({"role": "user", "content": prompt})
+# React to user input
+if prompt := st.chat_input(f"Ask  {llm.model.split('/')[-1]}"):
+    # Display user message in chat message container
+    st.chat_message("user").markdown(prompt)
+    # Add user message to chat history
+    st.session_state.messages.append({"role": "user", "content": prompt})
 
-#     response = llm(prompt)
-#     # Display assistant response in chat message container
-#     with st.chat_message("assistant"):
-#         st.markdown(response)
-#     # Add assistant response to chat history
-#     st.session_state.messages.append({"role": "assistant", "content": response})
+    response = llm(prompt)
+    # Display assistant response in chat message container
+    with st.chat_message("assistant"):
+        st.markdown(response)
+    # Add assistant response to chat history
+    st.session_state.messages.append({"role": "assistant", "content": response})
 
 
 
