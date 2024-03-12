@@ -6,7 +6,7 @@ from langchain_community.llms import HuggingFaceEndpoint
 from PIL import Image
 
 import os
-HUGGINGFACEHUB_API_TOKEN = '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'
+HUGGINGFACEHUB_API_TOKEN =  st.secrets['HUGGINGFACEHUB_API_TOKEN']
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = HUGGINGFACEHUB_API_TOKEN
 
 from streamlit_float import *
