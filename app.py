@@ -1,0 +1,108 @@
+import streamlit as st 
+import langchain
+from langchain_community.llms import HuggingFaceHub
+from langchain_community.chat_models.huggingface import ChatHuggingFace
+from langchain_community.llms import HuggingFaceEndpoint
+from PIL import Image
+
+import os
+HUGGINGFACEHUB_API_TOKEN = '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'
+os.environ["HUGGINGFACEHUB_API_TOKEN"] = HUGGINGFACEHUB_API_TOKEN
+
+from streamlit_float import *
+
+
+
+# Initialize chat history
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+
+
+st.set_page_config(page_title="Chat With PDFs", layout="wide")
+
+# initialize float feature/capability
+float_init()
+
+st.markdown("""
+        <style>
+               .block-container {
+                    padding-top: 0.5rem;
+                    padding-left: 3rem;
+                    padding-right: 3rem;
+                    padding-bottom: -1rem;
+                }
+        </style>
+        """, unsafe_allow_html=True)
+col1,col2, col3  = st.columns([0.2,0.4, 0.4])
+with col1:
+    st.image(Image.open('BugendaiTech Logo.png'))
+with col2:
+    st.markdown(f'''<span style="background-color:#FFFFFF; border-radius:5px;
+                color: #000000; padding: 0.8em 1.2em; position: relative;
+                text-decoration: none; font-weight: bold; margin-top: 20px; font-size: 2.25em;
+                ">Chat with 🤗 LLMs</span>''', unsafe_allow_html=True)
+# st.title('My Huggingface 🤗 LLM')
+
+
+# hub_llm = HuggingFaceHub(
+#     repo_id= 'google/gemma-2b-it',
+#     model_kwargs={'temperature': 0.1, 'max_new_tokens': 1024}
+# )
+
+# col1, col2 , col3  = st.columns([0.25, 0.5,0.25])
+    
+llm_model = col3.selectbox('**Choose the LLM to chat**', ["google/gemma-2b-it", "google/gemma-7b-it",
+                          "mistralai/Mistral-7B-Instruct-v0.2","mistralai/Mixtral-8x7B-Instruct-v0.1"])
+
+# llm_model = "mistralai/Mixtral-8x7B-Instruct-v0.1"
+llm = HuggingFaceEndpoint(
+    repo_id=llm_model, 
+    # model_kwargs={"temperature": temperature, "max_new_tokens": max_tokens, "top_k": top_k, "load_in_8bit": True}
+    temperature = 0.1,
+    max_new_tokens = 1024,
+    top_k = 50,
+    model_kwargs = {'load_in_8bit': True}
+)
+
+# chat_model = ChatHuggingFace(llm=llm)
+
+# st.write(llm)
+messages_container = st.container(height=350)
+
+
+if prompt := st.chat_input(f"Ask  {llm.model.split('/')[-1]}"):
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    response = llm(prompt)
+    st.session_state.messages.append({"role": "assistant", "content": response})
+
+for message in st.session_state.messages:
+    messages_container.chat_message(message["role"]).write(message["content"])
+
+
+                            
+
+# with messages_container:
+
+#     # Display chat messages from history on app rerun
+#     for message in st.session_state.messages:
+#         with st.chat_message(message["role"]):
+#             st.markdown(message["content"])
+
+
+# # React to user input
+# if prompt := st.chat_input(f"Ask  {llm.model.split('/')[-1]}"):
+#     # Display user message in chat message container
+#     st.chat_message("user").markdown(prompt)
+#     # Add user message to chat history
+#     st.session_state.messages.append({"role": "user", "content": prompt})
+
+#     response = llm(prompt)
+#     # Display assistant response in chat message container
+#     with st.chat_message("assistant"):
+#         st.markdown(response)
+#     # Add assistant response to chat history
+#     st.session_state.messages.append({"role": "assistant", "content": response})
+
+
+
