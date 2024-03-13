@@ -84,24 +84,7 @@ llm = HuggingFaceEndpoint(
     model_kwargs = {'load_in_8bit': True}
 )
 
-# chat_model = ChatHuggingFace(llm=llm)
 
-# st.write(llm)
-# messages_container = st.container(height=350)
-
-
-# if prompt := st.chat_input(f"Ask  {llm.model.split('/')[-1]}"):
-#     st.session_state.messages.append({"role": "user", "content": prompt})
-#     response = llm(prompt)
-#     st.session_state.messages.append({"role": "assistant", "content": response})
-
-# for message in st.session_state.messages:
-#     messages_container.chat_message(message["role"]).write(message["content"])
-
-
-                            
-
-# with messages_container:
 
     # Display chat messages from history on app rerun
 for message in st.session_state.messages:
