@@ -36,22 +36,21 @@ st.markdown("""
 st.markdown("""
 <style>
 .stButton > button {
-  background-color: #0B5487; /* Blue */
+  background-color: #4CAF50; /* Green */
   border: solid;
-  color: white;
-  padding: 15px 15px;
+  color: black;
+  padding: 11px 15px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  border-radius: 8px;
-  transition: all 0.3s ease-in-out;
+  font-size: 32px;
+  border-radius: 12px;
+  transition-duration: 0.4s;
 }
 
 .stButton > button:hover {
-  background-color: #0D47A1; /* Darker Blue */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
+  background-color: #3e8e41; /* Darker Green */
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 </style>
 """, unsafe_allow_html=True)
