@@ -49,8 +49,10 @@ st.markdown("""
 }
 
 .stButton > button:hover {
-  background-color: #3e8e41; /* Darker Green */
+  background-color: black; /* Change to black on hover */
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  color: red; /* Change the font color to red on hover */
+  font-weight: bold; /* Make the font bold on hover */
 }
 </style>
 """, unsafe_allow_html=True)
