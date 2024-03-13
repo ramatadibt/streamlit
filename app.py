@@ -9,7 +9,7 @@ import os
 HUGGINGFACEHUB_API_TOKEN =  st.secrets['HUGGINGFACEHUB_API_TOKEN']
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = HUGGINGFACEHUB_API_TOKEN
 
-from streamlit_float import *
+# from streamlit_float import *
 
 
 
