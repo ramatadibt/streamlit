@@ -53,7 +53,8 @@ with col2:
 # col1, col2 , col3  = st.columns([0.25, 0.5,0.25])
     
 llm_model = col3.selectbox('**Choose the LLM to chat**', ["google/gemma-2b-it", "google/gemma-7b-it",
-                          "mistralai/Mistral-7B-Instruct-v0.2","mistralai/Mixtral-8x7B-Instruct-v0.1"])
+                          "mistralai/Mistral-7B-Instruct-v0.2","mistralai/Mixtral-8x7B-Instruct-v0.1", 
+                        "NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO", "HuggingFaceH4/zephyr-7b-beta"])
 
 # llm_model = "mistralai/Mixtral-8x7B-Instruct-v0.1"
 llm = HuggingFaceEndpoint(
