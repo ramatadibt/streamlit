@@ -9,8 +9,6 @@ import os
 HUGGINGFACEHUB_API_TOKEN =  st.secrets['HUGGINGFACEHUB_API_TOKEN']
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = HUGGINGFACEHUB_API_TOKEN
 
-# from streamlit_float import *
-
 
 
 # Initialize chat history
@@ -18,23 +16,47 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
 
 
-
 st.set_page_config(page_title="Chat With PDFs", layout="wide")
 
-# initialize float feature/capability
-# float_init()
+def reset_conversation():
+  st.session_state.messages = []
 
 st.markdown("""
         <style>
                .block-container {
-                    padding-top: 1.5rem;
+                    padding-top: 0.5rem;
                     padding-left: 3rem;
                     padding-right: 3rem;
                     padding-bottom: -1rem;
                 }
         </style>
         """, unsafe_allow_html=True)
-col1,col2, col3  = st.columns([0.2,0.4, 0.4])
+
+
+st.markdown("""
+<style>
+.stButton > button {
+  background-color: #0B5487; /* Blue */
+  border: solid;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.stButton > button:hover {
+  background-color: #0D47A1; /* Darker Blue */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+</style>
+""", unsafe_allow_html=True)
+
+col1,col2, col3, col4  = st.columns([0.2,0.32, 0.38, 0.1])
 with col1:
     st.image(Image.open('BugendaiTech Logo.png'))
 with col2:
@@ -42,21 +64,18 @@ with col2:
                 color: #000000; padding: 0.8em 1.2em; position: relative;
                 text-decoration: none; font-weight: bold; margin-top: 20px; font-size: 2.25em;
                 ">Chat with 🤗 LLMs</span>''', unsafe_allow_html=True)
-# st.title('My Huggingface 🤗 LLM')
 
-
-# hub_llm = HuggingFaceHub(
-#     repo_id= 'google/gemma-2b-it',
-#     model_kwargs={'temperature': 0.1, 'max_new_tokens': 1024}
-# )
-
-# col1, col2 , col3  = st.columns([0.25, 0.5,0.25])
     
 llm_model = col3.selectbox('**Choose the LLM to chat**', ["google/gemma-2b-it", "google/gemma-7b-it",
                           "mistralai/Mistral-7B-Instruct-v0.2","mistralai/Mixtral-8x7B-Instruct-v0.1", 
-                        "NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO", "HuggingFaceH4/zephyr-7b-beta"])
+                          'NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO', 
+                         "HuggingFaceH4/zephyr-7b-beta"])
 
-# llm_model = "mistralai/Mixtral-8x7B-Instruct-v0.1"
+
+col4.button('Clear Chat', on_click= reset_conversation)
+
+
+
 llm = HuggingFaceEndpoint(
     repo_id=llm_model, 
     # model_kwargs={"temperature": temperature, "max_new_tokens": max_tokens, "top_k": top_k, "load_in_8bit": True}
