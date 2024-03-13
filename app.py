@@ -16,7 +16,7 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
 
 
-st.set_page_config(page_title="Chat With PDFs", layout="wide")
+st.set_page_config(page_title="Huggingface LLMs Chatbot", layout="wide")
 
 def reset_conversation():
   st.session_state.messages = []
