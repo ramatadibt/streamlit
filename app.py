@@ -27,7 +27,7 @@ st.set_page_config(page_title="Chat With PDFs", layout="wide")
 st.markdown("""
         <style>
                .block-container {
-                    padding-top: 0rem;
+                    padding-top: 1rem;
                     padding-left: 3rem;
                     padding-right: 3rem;
                     padding-bottom: -1rem;
