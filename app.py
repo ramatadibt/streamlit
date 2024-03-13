@@ -22,7 +22,7 @@ if "messages" not in st.session_state:
 st.set_page_config(page_title="Chat With PDFs", layout="wide")
 
 # initialize float feature/capability
-float_init()
+# float_init()
 
 st.markdown("""
         <style>
