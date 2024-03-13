@@ -1,3 +1,1 @@
-langchain == 0.1.11
-streamlit == 0.32.0
-tornado == 6.4
+langchain
