@@ -59,13 +59,13 @@ st.markdown("""
 
 col1,col2, col3, col4  = st.columns([0.2,0.35, 0.35, 0.10])
 with col1:
-    st.image(Image.open('BugendaiTech Logo.png'))
+    st.image(Image.open('opaquelogo.png'))
 with col2:
     # st.markdown(f'''<span style="background-color:#FFFFFF; border-radius:5px;
     #             color: #000000; padding: 0.8em 1.2em; position: relative;
     #             text-decoration: none; font-weight: bold; margin-top: 20px; font-size: 2.25em;
     #             ">Plug & Play LLMs</span>''', unsafe_allow_html=True)
-    st.title('PLug & Play LLMs')
+    st.title('Plug & Play LLMs')
 
     
 llm_model = col3.selectbox('**Select LLM**', ["google/gemma-2b-it", "google/gemma-7b-it",
