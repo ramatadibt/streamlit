@@ -57,7 +57,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-col1,col2, col3, col4  = st.columns([0.2,0.35, 0.35, 0.1])
+col1,col2, col3, col4  = st.columns([0.2,0.30, 0.35, 0.15])
 with col1:
     st.image(Image.open('BugendaiTech Logo.png'))
 with col2:
