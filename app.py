@@ -104,7 +104,7 @@ with col5:
         on_click=lambda: handle_click("prompt1"),
         styles={
         "card": {
-            "width": "170px",
+            "width": "200px",
             "height": "120px",
             "border-radius": "2px",
             "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
