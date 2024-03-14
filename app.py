@@ -104,7 +104,7 @@ with col5:
         on_click=lambda: handle_click("prompt1"),
         styles={
         "card": {
-            "width": "160px",
+            "width": "170px",
             "height": "120px",
             "border-radius": "2px",
             "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
@@ -125,7 +125,7 @@ with col6:
         on_click=lambda: handle_click("prompt2"),
         styles={
         "card": {
-            "width": "160px",
+            "width": "170px",
             "height": "120px",
             "border-radius": "2px",
             "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
@@ -146,7 +146,7 @@ with col7:
         on_click=lambda: handle_click("prompt3"),
         styles={
         "card": {
-            "width": "160px",
+            "width": "170px",
             "height": "120px",
             "border-radius": "2px",
             "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
@@ -169,7 +169,7 @@ with col8:
         on_click=lambda: handle_click("prompt4"),
         styles={
         "card": {
-            "width": "160px",
+            "width": "170px",
             "height": "120px",
             "border-radius": "2px",
             "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
@@ -191,7 +191,7 @@ with col9:
         on_click=lambda: handle_click("prompt5"),
         styles={
         "card": {
-            "width": "160px",
+            "width": "170px",
             "height": "120px",
             "border-radius": "2px",
             "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
@@ -216,7 +216,7 @@ with col10:
         on_click=lambda: handle_click("prompt6"),
         styles={
         "card": {
-            "width": "160px",
+            "width": "170px",
             "height": "120px",
             "border-radius": "2px",
             "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
