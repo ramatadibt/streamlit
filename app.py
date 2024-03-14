@@ -112,6 +112,7 @@ with col5:
         },
         "text": {
             "font-family": "serif",
+            "font-size" : "12px",
         }
     }
         )
@@ -132,6 +133,7 @@ with col6:
         },
         "text": {
             "font-family": "serif",
+            "font-size" : "12px",
         }
     }
         )
@@ -152,7 +154,8 @@ with col7:
         },
         "text": {
             "font-family": "serif",
-            "font-size" : "14px",
+            "font-size" : "12px",
+           
         }
     }
         )
@@ -174,7 +177,7 @@ with col8:
         },
         "text": {
             "font-family": "serif",
-            "font-size" : "14px",
+            "font-size" : "12px",
         }
     }
         )
@@ -200,7 +203,7 @@ with col9:
         },
         "text": {
             "font-family": "serif",
-            "font-size" : "14px",
+            "font-size" : "12px",
         }
     }
         )
@@ -225,7 +228,7 @@ with col10:
         },
         "text": {
             "font-family": "serif",
-            "font-size" : "14px",
+            "font-size" : "12px",
         }
     }
         )
