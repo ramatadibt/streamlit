@@ -64,10 +64,10 @@ with col2:
     st.markdown(f'''<span style="background-color:#FFFFFF; border-radius:5px;
                 color: #000000; padding: 0.8em 1.2em; position: relative;
                 text-decoration: none; font-weight: bold; margin-top: 20px; font-size: 2.25em;
-                ">Chat with 🤗 LLMs</span>''', unsafe_allow_html=True)
+                ">Plug & Play LLMs</span>''', unsafe_allow_html=True)
 
     
-llm_model = col3.selectbox('**Choose the LLM to chat**', ["google/gemma-2b-it", "google/gemma-7b-it",
+llm_model = col3.selectbox('**Select LLM**', ["google/gemma-2b-it", "google/gemma-7b-it",
                           "mistralai/Mistral-7B-Instruct-v0.2","mistralai/Mixtral-8x7B-Instruct-v0.1", 
                           'NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO', 
                          "HuggingFaceH4/zephyr-7b-beta"])
