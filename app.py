@@ -57,7 +57,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-col1,col2, col3, col4  = st.columns([0.2,0.30, 0.35, 0.15])
+col1,col2, col3, col4, col5  = st.columns([0.2,0.30, 0.35, 0.05, 0.10])
 with col1:
     st.image(Image.open('BugendaiTech Logo.png'))
 with col2:
@@ -73,7 +73,7 @@ llm_model = col3.selectbox('**Select LLM**', ["google/gemma-2b-it", "google/gemm
                          "HuggingFaceH4/zephyr-7b-beta"])
 
 
-col4.button('Clear Chat', on_click= reset_conversation)
+col5.button('Clear Chat', on_click= reset_conversation)
 
 
 
