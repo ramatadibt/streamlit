@@ -76,7 +76,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-col1,col2, col3, col4  = st.columns([0.2,0.35, 0.35, 0.10])
+col1,col2, col3, col4, col5  = st.columns([0.2,0.30, 0.32, 0.09, 0.11])
 with col1:
     st.image(Image.open('opaquelogo.png'))
 with col2:
@@ -89,6 +89,10 @@ llm_model = col3.selectbox('**Select LLM**', ["google/gemma-2b-it", "google/gemm
 
 
 col4.button('Clear Chat', on_click= reset_conversation)
+
+
+if col5.button("Chat with PDF"):
+    st.switch_page("pages/pdfchat.py")
 
 
 def handle_click(card_name):
