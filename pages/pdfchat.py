@@ -101,7 +101,6 @@ llm = HuggingFaceEndpoint(
 uploaded_file = st.file_uploader(':blue[**Upload the PDF (Should be less than 3 pages)**]', 
                               type = 'pdf')
 
-st.write(uploaded_file)
 
 if uploaded_file is not None:
     st.session_state.uploaded_file_content = uploaded_file.read()
