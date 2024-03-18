@@ -30,7 +30,6 @@ def reset_conversation():
   st.session_state.uploaded_file_content = None
   st.session_state.uploaded_file_name = ''
 
-
 st.markdown("""
         <style>
                .block-container {
@@ -107,7 +106,8 @@ if uploaded_file is not None:
     st.session_state.uploaded_file_name = uploaded_file.name
 
 if 'uploaded_file_content' in st.session_state and st.session_state.uploaded_file_content:
-    st.write(f'{st.session_state.uploaded_file_name} is uploaded')
+    if st.session_state.uploaded_file_name:  # Check if the file name is not empty
+        st.write(f'{st.session_state.uploaded_file_name} is uploaded')
     with fitz.open(stream=st.session_state.uploaded_file_content, filetype="pdf") as doc:
         text = ""
         num_pages = len(doc)
