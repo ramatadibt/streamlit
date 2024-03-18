@@ -124,7 +124,7 @@ if 'uploaded_file_content' in st.session_state and st.session_state.uploaded_fil
 
         
             # React to user input
-            prompt = st.chat_input(f"Ask  {llm.model.split('/')[-1]} questions about {st.session_state.uploaded_file_name}"):
+            prompt = st.chat_input(f"Ask  {llm.model.split('/')[-1]} questions about {st.session_state.uploaded_file_name}")
             
             if prompt :
                 if prompt.lower() in ['hi', 'hello']:
