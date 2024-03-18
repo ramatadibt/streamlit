@@ -275,7 +275,7 @@ if prompt1:
     # Add assistant response to chat history
     # st.session_state.messages.append({"role": "assistant", "content": response1})
 
-if prompt2:
+elif prompt2:
     p2 = "Give the step-by-step recipe to make a delicious pizza."
     st.chat_message("user").markdown(p2)
     # Add user message to chat history
@@ -287,7 +287,7 @@ if prompt2:
     # Add assistant response to chat history
     # st.session_state.messages.append({"role": "assistant", "content": response2})
 
-if prompt3:
+elif prompt3:
     p3 = "Draft an email to a seller asking about computer specifications."
     st.chat_message("user").markdown(p3)
     # Add user message to chat history
@@ -300,7 +300,7 @@ if prompt3:
     # st.session_state.messages.append({"role": "assistant", "content": response3})
 
 
-if prompt4:
+elif prompt4:
     p4 = "Teach me how a neural network works like I am 10 years old."
     st.chat_message("user").markdown(p4)
     # Add user message to chat history
@@ -313,7 +313,7 @@ if prompt4:
     # st.session_state.messages.append({"role": "assistant", "content": response4})
 
 
-if prompt5:
+elif prompt5:
     p5 = "What are some off-the-beaten-path destinations to explore in India?"
     st.chat_message("user").markdown(p5)
     # Add user message to chat history
@@ -328,7 +328,7 @@ if prompt5:
 
 
 
-if prompt6:
+elif prompt6:
     p6 = "Act as Steve Jobs. Give me your advice in how can I improve my time management."
     st.chat_message("user").markdown(p6)
     # Add user message to chat history
