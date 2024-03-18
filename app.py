@@ -116,7 +116,7 @@ with col5:
             "font-family": "serif",
             "font-size" : "12px",
             "overflow": "auto", 
-            "font-size-adjust": 0.5; 
+            "font-size-adjust": 0.5,
         }
     }
         )
