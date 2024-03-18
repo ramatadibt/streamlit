@@ -138,6 +138,9 @@ with col6:
         "text": {
             "font-family": "serif",
             "font-size" : "12px",
+            "overflow": "hidden",  # Add this line
+            "text-overflow": "ellipsis",  # Add this line
+            "white-space": "nowrap",  # Add this line
         }
     }
         )
