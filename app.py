@@ -20,14 +20,6 @@ if "messages" not in st.session_state:
 
 st.set_page_config(page_title="Huggingface LLMs Chatbot", layout="wide")
 
-st.markdown("""
-        <style>
-        [data-testid="stChatInput"] {
-        color: #000;
-        caret-color: #000;
-        }
-        </style>""", unsafe_allow_html=True)
-
 
 def reset_conversation():
   st.session_state.messages = []
