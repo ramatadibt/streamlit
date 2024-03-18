@@ -238,7 +238,7 @@ with col10:
         )
 
 
-st.write(prompt1, prompt2, prompt3, prompt4, prompt5, prompt6)
+
 
 llm = HuggingFaceEndpoint(
     repo_id=llm_model, 
