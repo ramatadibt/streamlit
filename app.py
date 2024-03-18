@@ -341,6 +341,14 @@ if prompt := st.chat_input(f"Ask  {llm.model.split('/')[-1]}"):
     }
     </style>
     """, unsafe_allow_html=True)
+
+    n = st.markdown("""
+<style>
+textarea.st-ak.st-bt.st-cw.st-cx.st-cy.st-cz.st-bu.st-bw.st-bv.st-bx.st-bz.st-am.st-d0.st-bo.st-au.st-d1.st-d2.st-d3.st-d4.st-d5.st-ae.st-af.st-ag.st-ah.st-ai.st-aj.st-dj.st-dp.st-dq.st-d8.st-c7.st-df::placeholder {
+    color: #ffffff; /* Or any other bright color code you prefer */
+}
+</style>
+""", unsafe_allow_html=True)
     
     # Display user message in chat message container
     st.chat_message("user").markdown(prompt)
