@@ -334,6 +334,14 @@ if st.session_state.card6:
 
 # React to user input
 if prompt := st.chat_input(f"Ask  {llm.model.split('/')[-1]}"):
+    m = st.markdown("""
+    <style> 
+    .stChatInputContainer > div {
+    background-color: #D81BB8;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+    
     # Display user message in chat message container
     st.chat_message("user").markdown(prompt)
     # Add user message to chat history
