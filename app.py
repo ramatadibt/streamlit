@@ -109,12 +109,12 @@ with col5:
             "width": "160px",
             "height": "120px",
             "border-radius": "2px",
-            "box-shadow": "0 0 10px rgba(0,0,0,0.5)",        
+            "box-shadow": "0 0 10px rgba(0,0,0,0.5)",  
+            "overflow": "auto"
         },
         "text": {
             "font-family": "serif",
             "font-size" : "12px",
-            "overflow-wrap": "break-word",   
         }
     }
         )
@@ -127,7 +127,8 @@ with col6:
         key = 'card2',
         styles={
         "card": {
-            "width": "170px",
+            # "width": "170px",
+            "width": "100%", 
             "height": "120px",
             "border-radius": "2px",
             "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
