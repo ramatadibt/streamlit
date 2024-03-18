@@ -110,7 +110,7 @@ with col5:
             "height": "120px",
             "border-radius": "2px",
             "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
-            
+            "overflow-wrap": "break-word",           
         },
         "text": {
             "font-family": "serif",
