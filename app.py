@@ -109,12 +109,12 @@ with col5:
             "width": "160px",
             "height": "120px",
             "border-radius": "2px",
-            "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
-            "overflow-wrap": "break-word",           
+            "box-shadow": "0 0 10px rgba(0,0,0,0.5)",        
         },
         "text": {
             "font-family": "serif",
             "font-size" : "12px",
+            "overflow-wrap": "break-word",   
         }
     }
         )
