@@ -18,7 +18,13 @@ if "messages" not in st.session_state:
 
 
 
-st.set_page_config(page_title="Huggingface LLMs Chatbot", layout="wide")
+st.set_page_config(page_title="Huggingface LLMs Chatbot", layout="wide",
+                  menu_items={
+        'Get Help': 'https://www.extremelycoolapp.com/help',
+        'Report a bug': "https://www.extremelycoolapp.com/bug",
+        'About': "# This is a header. This is an *extremely* cool app!"
+    }
+                  )
 
 st.markdown(
     """
