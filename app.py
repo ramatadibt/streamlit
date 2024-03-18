@@ -20,6 +20,19 @@ if "messages" not in st.session_state:
 
 st.set_page_config(page_title="Huggingface LLMs Chatbot", layout="wide")
 
+st.markdown(
+    """
+    <style>
+    .css-1jc7ptx, .e1ewe7hr3, .viewerBadge_container__1QSob,
+    .styles_viewerBadge__1yB5_, .viewerBadge_link__1S137,
+    .viewerBadge_text__1JaDK {
+        display: none;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 def reset_conversation():
   st.session_state.messages = []
   st.session_state.card1 = False
