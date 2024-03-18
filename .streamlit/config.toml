@@ -1,2 +1,6 @@
 [theme]
 base = "dark"
+
+# Controls whether the default sidebar page navigation in a multipage app is displayed.
+[client]
+showSidebarNavigation = false
