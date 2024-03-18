@@ -122,8 +122,25 @@ if 'uploaded_file_content' in st.session_state and st.session_state.uploaded_fil
                 with st.chat_message(message["role"]):
                     st.markdown(message["content"])
 
+        
             # React to user input
-            if prompt := st.chat_input(f"Ask  {llm.model.split('/')[-1]} questions about {st.session_state.uploaded_file_name}"):
+            prompt = st.chat_input(f"Ask  {llm.model.split('/')[-1]} questions about {st.session_state.uploaded_file_name}"):
+            
+            if prompt :
+                if prompt.lower() in ['hi', 'hello']:
+                    # Display user message in chat message container
+                    st.chat_message("user").markdown(prompt)
+                    # Add user message to chat history
+                    st.session_state.pdfmessages.append({"role": "user", "content": prompt})
+            
+                    response = 'Hi, How can I assist you today?'
+                    # Display assistant response in chat message container
+                    with st.chat_message("assistant"):
+                        st.markdown(response)
+                    # Add assistant response to chat history
+                    st.session_state.pdfmessages.append({"role": "assistant", "content": response})
+
+            else:        
                 # Display user message in chat message container
                 st.chat_message("user").markdown(prompt)
                 # Add user message to chat history
@@ -136,5 +153,3 @@ if 'uploaded_file_content' in st.session_state and st.session_state.uploaded_fil
                 # Add assistant response to chat history
                 st.session_state.pdfmessages.append({"role": "assistant", "content": response})
         
-        else:
-            st.write('Please upload a shorter PDF')
