@@ -103,7 +103,7 @@ if st.session_state.uploaded_file is not None:
     st.session_state.uploaded_file_content = st.session_state.uploaded_file.read()
     st.session_state.uploaded_file_name = st.session_state.uploaded_file.name
 
-if uploaded_file_content in st.session_state:
+if 'uploaded_file_content' in st.session_state:
     with fitz.open(stream=st.session_state.uploaded_file_content, filetype="pdf") as doc:
         text = ""
         num_pages = len(doc)
