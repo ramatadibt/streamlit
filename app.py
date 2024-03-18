@@ -94,9 +94,16 @@ col4.button('Clear Chat', on_click= reset_conversation)
 if col5.button("Chat with PDF"):
     st.switch_page("pages/pdfchat.py")
 
-
 def handle_click(card_name):
-    st.session_state.card_states[card_name] = not st.session_state.card_states[card_name]
+    st.session_state.card_states = {
+        "prompt1": False,
+        "prompt2": False,
+        "prompt3": False,
+        "prompt4": False,
+        "prompt5": False,
+        "prompt6": False,
+    }
+    st.session_state.card_states[card_name] = True
 
 col5, col6, col7,col8,col9,col10  = st.columns(6)
 
