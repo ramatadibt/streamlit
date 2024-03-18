@@ -18,4 +18,4 @@ showSidebarNavigation = false
 #                 Streamlit Community Cloud) or through st.set_page_config.
 #                 If there are no options left, hide the menu.
 # Default: "auto"
-toolbarMode = "minimal"
+toolbarMode = "auto"
