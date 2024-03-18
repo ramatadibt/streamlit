@@ -1,9 +1,6 @@
 import streamlit as st 
 import langchain
-# from langchain_community.llms import HuggingFaceHub
-# from langchain_community.chat_models.huggingface import ChatHuggingFace
 from langchain_community.llms import HuggingFaceEndpoint
-# from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from PIL import Image
 import fitz 
 
@@ -95,15 +92,15 @@ llm = HuggingFaceEndpoint(
     max_new_tokens = 1024,
     top_k = 50)
 
-st.session_state.uploaded_file = st.file_uploader(':blue[**Upload the PDF (Should be less than 3 pages)**]', 
-                              type = 'pdf')
+st.session_state.uploaded_file = st.file_uploader(':blue[**Upload the PDF (Should be less than 3 pages)**]',  type = 'pdf')
 
 
 if st.session_state.uploaded_file is not None:
     st.session_state.uploaded_file_content = st.session_state.uploaded_file.read()
     st.session_state.uploaded_file_name = st.session_state.uploaded_file.name
 
-if 'uploaded_file_content' in st.session_state:
+# if 'uploaded_file_content' in st.session_state:
+if st.session_state.uploaded_file is not None:
     with fitz.open(stream=st.session_state.uploaded_file_content, filetype="pdf") as doc:
         text = ""
         num_pages = len(doc)
