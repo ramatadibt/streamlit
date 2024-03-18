@@ -15,29 +15,19 @@ from streamlit_card import card
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
-if "card_states" not in st.session_state:
-    st.session_state.card_states = {
-        "prompt1": False,
-        "prompt2": False,
-        "prompt3": False,
-        "prompt4": False,
-        "prompt5": False,
-        "prompt6": False,
-    }
+
 
 
 st.set_page_config(page_title="Huggingface LLMs Chatbot", layout="wide")
 
 def reset_conversation():
   st.session_state.messages = []
-  st.session_state.card_states = {
-        "prompt1": False,
-        "prompt2": False,
-        "prompt3": False,
-        "prompt4": False,
-        "prompt5": False,
-        "prompt6": False,
-    }
+  st.session_state.card1 = False
+  st.session_state.card2 = False
+  st.session_state.card3 = False
+  st.session_state.card4 = False
+  st.session_state.card5 = False
+  st.session_state.card6 = False
 
 
 st.markdown("""
@@ -112,7 +102,7 @@ with col5:
         title="Coding",
         text="Write a python code to print fibonacci series",
         image="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=600", 
-        on_click=lambda: handle_click("prompt1"),
+        key = 'card1',
         styles={
         "card": {
             "width": "160px",
@@ -133,7 +123,7 @@ with col6:
         title="Cooking",
         text="Give the step-by-step recipe to make a delicious pizza.",
         image="https://images.pexels.com/photos/905847/pexels-photo-905847.jpeg?auto=compress&cs=tinysrgb&w=600", 
-        on_click=lambda: handle_click("prompt2"),
+        key = 'card2',
         styles={
         "card": {
             "width": "170px",
@@ -153,8 +143,8 @@ with col7:
     prompt3 = card(
         title="Mails",
         text="Draft an email to a seller asking about computer specifications.",
-        image="https://images.unsplash.com/photo-1637593992672-ed85a851fdc3?q=80&w=2062&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
-        on_click=lambda: handle_click("prompt3"),
+        image="https://images.unsplash.com/photo-1637593992672-ed85a851fdc3?q=80&w=2062&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        key = 'card3',
         styles={
         "card": {
             "width": "170px",
@@ -177,7 +167,7 @@ with col8:
         title="Explain",
         text="Teach me how a neural network works like I am 10 years old.",
         image="https://images.pexels.com/photos/5212338/pexels-photo-5212338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
-        on_click=lambda: handle_click("prompt4"),
+        key = 'card4,
         styles={
         "card": {
             "width": "170px",
@@ -199,7 +189,7 @@ with col9:
         title="Brainstorming",
         text="What are some off-the-beaten-path destinations to explore in India?",
         image="https://miro.medium.com/v2/resize:fit:1000/1*QJ53LegShIfxuqljSB0w8Q.jpeg", 
-        on_click=lambda: handle_click("prompt5"),
+        key = 'card5',
         styles={
         "card": {
             "width": "170px",
@@ -224,7 +214,7 @@ with col10:
         title="Mentorship",
         text="Act as Steve Jobs. Give me your advice in how can I improve my time management.",
         image="https://ideas.ted.com/wp-content/uploads/sites/3/2018/09/featured_art_mentor_istock.jpg", 
-        on_click=lambda: handle_click("prompt6"),
+        key = 'card6',
         styles={
         "card": {
             "width": "170px",
@@ -262,7 +252,7 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-if prompt1:
+if st.session_state.card1:
     p1 = "Write a python code to print fibonacci series"
     st.chat_message("user").markdown(p1)
     # Add user message to chat history
@@ -275,7 +265,7 @@ if prompt1:
     # Add assistant response to chat history
     # st.session_state.messages.append({"role": "assistant", "content": response1})
 
-elif prompt2:
+if st.session_state.card2:
     p2 = "Give the step-by-step recipe to make a delicious pizza."
     st.chat_message("user").markdown(p2)
     # Add user message to chat history
@@ -287,7 +277,7 @@ elif prompt2:
     # Add assistant response to chat history
     # st.session_state.messages.append({"role": "assistant", "content": response2})
 
-elif prompt3:
+if st.session_state.card3:
     p3 = "Draft an email to a seller asking about computer specifications."
     st.chat_message("user").markdown(p3)
     # Add user message to chat history
@@ -300,7 +290,7 @@ elif prompt3:
     # st.session_state.messages.append({"role": "assistant", "content": response3})
 
 
-elif prompt4:
+if st.session_state.card4:
     p4 = "Teach me how a neural network works like I am 10 years old."
     st.chat_message("user").markdown(p4)
     # Add user message to chat history
@@ -313,7 +303,7 @@ elif prompt4:
     # st.session_state.messages.append({"role": "assistant", "content": response4})
 
 
-elif prompt5:
+if st.session_state.card5:
     p5 = "What are some off-the-beaten-path destinations to explore in India?"
     st.chat_message("user").markdown(p5)
     # Add user message to chat history
@@ -328,7 +318,7 @@ elif prompt5:
 
 
 
-elif prompt6:
+if st.session_state.card6:
     p6 = "Act as Steve Jobs. Give me your advice in how can I improve my time management."
     st.chat_message("user").markdown(p6)
     # Add user message to chat history
