@@ -167,7 +167,7 @@ with col8:
         title="Explain",
         text="Teach me how a neural network works like I am 10 years old.",
         image="https://images.pexels.com/photos/5212338/pexels-photo-5212338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", 
-        key = 'card4,
+        key = 'card4',
         styles={
         "card": {
             "width": "170px",
