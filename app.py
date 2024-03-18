@@ -26,7 +26,7 @@ st.markdown("""
         color: #000;
         caret-color: #000;
         }
-        </style>""", allow_unsafe_html = True)
+        </style>""", unsafe_allow_html=True)
 
 
 def reset_conversation():
