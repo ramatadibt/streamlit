@@ -98,8 +98,8 @@ st.session_state.uploaded_file = st.file_uploader(':blue[**Upload the PDF (Shoul
 
 
 if st.session_state.uploaded_file is not None:
-    st.session_state.uploaded_file_content = uploaded_file.read()
-    st.session_state.uploaded_file_name = uploaded_file.name
+    st.session_state.uploaded_file_content = st.session_state.uploaded_file.read()
+    st.session_state.uploaded_file_name = st.session_state.uploaded_file.name
 
 if 'uploaded_file_content' in st.session_state:
     with fitz.open(stream=st.session_state.uploaded_file_content, filetype="pdf") as doc:
