@@ -87,6 +87,8 @@ col4.button('Clear Chat', on_click= reset_conversation)
 if col5.button("Chat with LLMs"):
     st.switch_page("app.py")
 
+st.write(st.session_state)
+
 llm = HuggingFaceEndpoint(
     repo_id=llm_model, 
     temperature = 0.1,
