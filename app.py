@@ -337,7 +337,7 @@ if prompt := st.chat_input(f"Ask  {llm.model.split('/')[-1]}"):
     m = st.markdown("""
     <style> 
     .stChatInputContainer > div {
-    background-color: #D81BB8;
+    background-color: "#2a2929";
     }
     </style>
     """, unsafe_allow_html=True)
