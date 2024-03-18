@@ -27,6 +27,7 @@ st.set_page_config(page_title="Chat With PDFs", layout="wide")
 def reset_conversation():
   st.session_state.pdfmessages = []
   st.session_state.total_pdf_text = ''
+  st.session_state.uploaded_file  =  None:
   st.session_state.uploaded_file_content = None
   st.session_state.uploaded_file_name = ''
 
@@ -71,11 +72,6 @@ col1,col2, col3, col4, col5  = st.columns([0.2,0.30, 0.32, 0.09, 0.11])
 with col1:
     st.image(Image.open('opaquelogo.png'))
 with col2:
-    # st.markdown(f'''<span style="background-color:#FFFFFF; border-radius:5px;
-    #             color: #000000; padding: 0.8em 1.2em; position: relative;
-    #             text-decoration: none; font-weight: bold; margin-top: 20px; font-size: 2.25em;
-    #             ">Plug & Play LLMs</span>''', unsafe_allow_html=True)
-    # title = r'$\textsf{\Huge Plug}$'
     st.write(r"$\textsf{\huge Plug \& Play LLMs}$")
 
     
@@ -97,15 +93,15 @@ llm = HuggingFaceEndpoint(
     max_new_tokens = 1024,
     top_k = 50)
 
-uploaded_file = st.file_uploader(':blue[**Upload the PDF (Should be less than 3 pages)**]', 
+st.session_state.uploaded_file = st.file_uploader(':blue[**Upload the PDF (Should be less than 3 pages)**]', 
                               type = 'pdf')
 
 
-if uploaded_file is not None:
+if st.session_state.uploaded_file is not None:
     st.session_state.uploaded_file_content = uploaded_file.read()
     st.session_state.uploaded_file_name = uploaded_file.name
 
-if 'uploaded_file_content' in st.session_state and st.session_state.uploaded_file_content:
+if 'uploaded_file_content' in st.session_state:
     with fitz.open(stream=st.session_state.uploaded_file_content, filetype="pdf") as doc:
         text = ""
         num_pages = len(doc)
