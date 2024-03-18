@@ -321,7 +321,7 @@ if st.session_state.card5:
 
 
 if st.session_state.card6:
-    p6 = "Act as Steve Jobs. Give me your advice in how can I improve my time management.Act as Steve Jobs. Give me your advice in how can I improve my time management."
+    p6 = "Act as Steve Jobs. Give me your advice in how can I improve my time management."
     st.chat_message("user").markdown(p6)
     # Add user message to chat history
     # st.session_state.messages.append({"role": "user", "content": p6})
