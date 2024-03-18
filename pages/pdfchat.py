@@ -140,16 +140,16 @@ if 'uploaded_file_content' in st.session_state and st.session_state.uploaded_fil
                     # Add assistant response to chat history
                     st.session_state.pdfmessages.append({"role": "assistant", "content": response})
 
-            else:        
-                # Display user message in chat message container
-                st.chat_message("user").markdown(prompt)
-                # Add user message to chat history
-                st.session_state.pdfmessages.append({"role": "user", "content": prompt})
-
-                response = llm(st.session_state.total_pdf_text + prompt)
-                # Display assistant response in chat message container
-                with st.chat_message("assistant"):
-                    st.markdown(response)
-                # Add assistant response to chat history
-                st.session_state.pdfmessages.append({"role": "assistant", "content": response})
-        
+                else:        
+                    # Display user message in chat message container
+                    st.chat_message("user").markdown(prompt)
+                    # Add user message to chat history
+                    st.session_state.pdfmessages.append({"role": "user", "content": prompt})
+    
+                    response = llm(st.session_state.total_pdf_text + prompt)
+                    # Display assistant response in chat message container
+                    with st.chat_message("assistant"):
+                        st.markdown(response)
+                    # Add assistant response to chat history
+                    st.session_state.pdfmessages.append({"role": "assistant", "content": response})
+            
