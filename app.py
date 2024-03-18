@@ -336,7 +336,7 @@ if st.session_state.card6:
 if prompt := st.chat_input(f"Ask  {llm.model.split('/')[-1]}"):
     m = st.markdown("""
     <style> 
-    .stChatInputContainer > div {
+    .stChatInputTextArea > div {
     background-color: "#2a2929";
     }
     </style>
