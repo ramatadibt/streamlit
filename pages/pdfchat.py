@@ -27,7 +27,7 @@ st.set_page_config(page_title="Chat With PDFs", layout="wide")
 def reset_conversation():
   st.session_state.pdfmessages = []
   st.session_state.total_pdf_text = ''
-  st.session_state.uploaded_file  =  None:
+  st.session_state.uploaded_file  =  None
   st.session_state.uploaded_file_content = None
   st.session_state.uploaded_file_name = ''
 
