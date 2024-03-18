@@ -84,15 +84,13 @@ col4.button('Clear Chat', on_click= reset_conversation)
 if col5.button("Chat with LLMs"):
     st.switch_page("app.py")
 
-st.write(st.session_state)
-
 llm = HuggingFaceEndpoint(
     repo_id=llm_model, 
     temperature = 0.1,
     max_new_tokens = 1024,
     top_k = 50)
 
-st.session_state.uploaded_file = st.file_uploader(':blue[**Upload the PDF (Should be less than 3 pages)**]',  type = 'pdf')
+st.session_state.uploaded_file = st.file_uploader(':blue[**Upload the PDF (Should be less than 4 pages)**]',  type = 'pdf')
 
 
 if st.session_state.uploaded_file is not None:
