@@ -67,7 +67,8 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-col1,col2, col3, col4, col5  = st.columns([0.2,0.30, 0.32, 0.09, 0.11])
+
+col1,col2, col3, col4, col5, col6  = st.columns([0.2,0.27, 0.30, 0.09, 0.09, 0.07])
 with col1:
     st.image(Image.open('opaquelogo.png'))
 with col2:
@@ -84,6 +85,9 @@ col4.button('Clear Chat', on_click= reset_conversation)
 
 if col5.button("Chat with PDF"):
     st.switch_page("pages/pdfchat.py")
+
+if col6.button('Help'):
+    st.switch_page("pages/help.py")
 
 def handle_click(card_name):
     st.session_state.card_states = {
