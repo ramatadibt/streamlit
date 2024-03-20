@@ -72,7 +72,7 @@ col1,col2, col3, col4, col5, col6  = st.columns([0.2,0.27, 0.30, 0.09, 0.09, 0.0
 with col1:
     st.image(Image.open('opaquelogo.png'))
 with col2:
-     st.write(r"$\textsf{\huge Plug and Play LLMs}$")
+     st.write(r"$\textsf{\huge Plug \& Play LLMs}$")
 
 llm_model = col3.selectbox('**Select LLM**', ["google/gemma-2b-it", "google/gemma-7b-it",
                           "mistralai/Mistral-7B-Instruct-v0.2","mistralai/Mixtral-8x7B-Instruct-v0.1", 
