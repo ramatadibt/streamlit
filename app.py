@@ -248,7 +248,6 @@ llm = HuggingFaceEndpoint(
     temperature = 0.1,
     max_new_tokens = 250,
     top_k = 50,
-    model_kwargs = {'load_in_8bit': True}
 )
 
 
