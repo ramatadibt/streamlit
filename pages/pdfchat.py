@@ -91,7 +91,7 @@ if col6.button('Help'):
 llm = HuggingFaceEndpoint(
     repo_id=llm_model, 
     temperature = 0.1,
-    max_new_tokens = 1024,
+    max_new_tokens = 250,
     top_k = 50)
 
 st.session_state.uploaded_file = st.file_uploader(':blue[**Upload the PDF (Should be less than 4 pages)**]',  type = 'pdf')
