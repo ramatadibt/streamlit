@@ -1,4 +1,4 @@
-langchain
+langchain==0.1.11
 huggingface-hub==0.21.4
 streamlit-card
 PyMuPDF
