@@ -246,7 +246,7 @@ with col10:
 llm = HuggingFaceEndpoint(
     repo_id=llm_model, 
     temperature = 0.1,
-    max_new_tokens = 250,
+    max_new_tokens = 512,
     top_k = 50,
 )
 
