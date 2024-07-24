@@ -31,16 +31,30 @@ def reset_conversation():
   st.session_state.card6 = False
 
 
+# st.markdown("""
+#         <style>
+#                .block-container {
+#                     padding-top: 1.5rem;
+#                     padding-left: 3rem;
+#                     padding-right: 3rem;
+#                     padding-bottom: -1rem;
+#                 }
+#         </style>
+#         """, unsafe_allow_html=True)
+
 st.markdown("""
-        <style>
-               .block-container {
-                    padding-top: 1.5rem;
-                    padding-left: 3rem;
-                    padding-right: 3rem;
-                    padding-bottom: -1rem;
-                }
-        </style>
-        """, unsafe_allow_html=True)
+<style>
+    .reportview-container .main .block-container {
+        padding-top: 1.5rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding-bottom: -1rem;
+    }
+    .reportview-container .main {
+        margin-top: 2rem;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 
 st.markdown("""
