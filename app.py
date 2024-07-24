@@ -51,7 +51,7 @@ st.markdown("""
         padding-bottom: -1rem;
     }
     .reportview-container .main {
-        margin-top: 2rem;
+        margin-top: 0.5rem;
     }
 </style>
 """, unsafe_allow_html=True)
