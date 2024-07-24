@@ -31,7 +31,7 @@ def reset_conversation():
 st.markdown("""
         <style>
                .block-container {
-                    padding-top: 1.4rem;
+                    padding-top: 1.5rem;
                     padding-left: 3rem;
                     padding-right: 3rem;
                     padding-bottom: -1rem;
