@@ -367,3 +367,29 @@ if prompt :
             st.markdown(response)
         # Add assistant response to chat history
         st.session_state.messages.append({"role": "assistant", "content": response})
+
+
+
+# Add this near the end of your script, after all other content
+
+st.markdown(
+    """
+    <style>
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #f1f1f1;
+        color: black;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+    }
+    </style>
+    <div class="footer">
+        This is just for Demo & API is consumed from HuggingFace
+    </div>
+    """,
+    unsafe_allow_html=True
+)
