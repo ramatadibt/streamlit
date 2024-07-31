@@ -141,7 +141,9 @@ if st.session_state.uploaded_file is not None:
                     # Add user message to chat history
                     st.session_state.pdfmessages.append({"role": "user", "content": prompt})
 
-                    system_prompt = """Use the following pieces of context to answer the question at the end. If you don't know the answer, just say that you don't know, don't try to make up an answer."""
+                    system_prompt = """You are helpful assistant that helps to answer questions from the PDF. Use the following pieces of context to answer the question at the end. 
+                    If you don't know the answer, just say that you don't know, don't try to make up an answer. If the user enters a gibberish string as question unrelated to context you reply the following - 
+                    "That doesn't look like a word or a sentence. Is there anything else I can help you with?" """
     
                     response = llm(system_prompt + "<context> " +  st.session_state.total_pdf_text + "</context> Question:" + prompt)
                     # Display assistant response in chat message container
