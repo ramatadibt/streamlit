@@ -147,4 +147,6 @@ if st.session_state.uploaded_file is not None:
                         st.markdown(response)
                     # Add assistant response to chat history
                     st.session_state.pdfmessages.append({"role": "assistant", "content": response})
+        else: 
+            st.write('Please upload a PDF less than 4 pages.') 
             
