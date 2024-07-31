@@ -148,5 +148,5 @@ if st.session_state.uploaded_file is not None:
                     # Add assistant response to chat history
                     st.session_state.pdfmessages.append({"role": "assistant", "content": response})
         else: 
-            st.write(f":yellow[**The {st.session_state.uploaded_file_name} has {num_pages} pages. Please upload a PDF with less than 5 pages.**]") 
+            st.write(f":blue[**The {st.session_state.uploaded_file_name} has {num_pages} pages. Please upload a PDF with less than 5 pages.**]") 
             
