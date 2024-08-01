@@ -90,7 +90,7 @@ if col6.button('Help'):
 
 llm = HuggingFaceEndpoint(
     repo_id=llm_model, 
-    temperature = 0,
+    temperature = 0.01,
     max_new_tokens = 250,
     top_k = 50)
 
