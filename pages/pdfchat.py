@@ -141,11 +141,31 @@ if st.session_state.uploaded_file is not None:
                     # Add user message to chat history
                     st.session_state.pdfmessages.append({"role": "user", "content": prompt})
 
-                    system_prompt = """You are helpful assistant. Use the following pieces of context to answer the question at the end. 
-                    If you don't know the answer, just say that you don't know, don't try to make up an answer. If the user enters a gibberish string as question unrelated to context you reply the following - 
-                    "That doesn't look like a word or a sentence. Is there anything else I can help you with?" """
-    
-                    response = llm(system_prompt + "<context> " +  st.session_state.total_pdf_text + "</context> Question:" + prompt)
+                    system_prompt = """
+You are a helpful assistant designed to provide accurate information based on given context. Your primary functions are:
+
+1. Answer questions using ONLY the information provided in the context.
+2. If the answer cannot be found in the context, respond with: "I'm sorry, but I don't have enough information in the provided context to answer that question accurately."
+3. Do not make up or infer information beyond what is explicitly stated in the context.
+4. If the user's input is not a clear question or is unrelated gibberish, respond with: "I'm not sure I understand your input. Could you please rephrase your question or provide a clear, context-related query?"
+5. Always maintain a polite and professional tone.
+6. If asked about your capabilities or the source of your information, explain that you are an AI assistant working with the context provided to you.
+
+Please process the following context and answer the subsequent question:
+
+<context>
+{context}
+</context>
+
+<question>
+{question}
+</question>
+
+Based solely on the above context, please provide your response:
+"""
+
+                    response = llm(system_prompt.format(context=st.session_state.total_pdf_text, question=prompt))
+
                     # Display assistant response in chat message container
                     with st.chat_message("assistant"):
                         st.markdown(response)
