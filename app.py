@@ -78,8 +78,7 @@ with col2:
 
 llm_model = col3.selectbox('**Select LLM**', ["google/gemma-1.1-2b-it", "google/gemma-1.1-7b-it",
                           "mistralai/Mistral-7B-Instruct-v0.2","mistralai/Mixtral-8x7B-Instruct-v0.1", 
-                          #'NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO',      
-                                              "mistralai/Mistral-Nemo-Instruct-2407",
+                          'NousResearch/Nous-Hermes-2-Mixtral-8x7B-DPO',  
                          "HuggingFaceH4/zephyr-7b-beta"])
 
 
