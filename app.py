@@ -364,14 +364,12 @@ if prompt :
 
 
         system_prompt = """
-<system>
 You are a helpful AI assistant. Your primary functions are:
 1. Answer questions using your broad knowledge base and capabilities.
 2. If you're not certain about an answer, acknowledge your uncertainty and provide the best information you can, explaining any limitations.
 3. If the user's input is unclear or seems like unrelated gibberish, politely ask for clarification.
 
 Please process the user's input within the <user> tags and provide a helpful response based on your capabilities and knowledge.
-</system>
 
 <user>
 {user_input}
