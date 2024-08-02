@@ -369,7 +369,7 @@ if prompt :
 3. If the user's input is unclear or seems like unrelated gibberish, politely ask for clarification.
 
 Please process the user's input and provide a helpful response based on your capabilities and knowledge. """ 
-        response = llm(system_prompt + prompt)
+        response = llm(system_prompt , prompt)
         # Display assistant response in chat message container
         with st.chat_message("assistant"):
             st.markdown(response)
