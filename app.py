@@ -362,14 +362,21 @@ if prompt :
         st.session_state.messages.append({"role": "user", "content": prompt})
 
 
-        system_prompt = """You are a helpful AI assistan . Your primary functions are:
-
+        system_prompt = """
+<system>
+You are a helpful AI assistant. Your primary functions are:
 1. Answer questions using your broad knowledge base and capabilities.
 2. If you're not certain about an answer, acknowledge your uncertainty and provide the best information you can, explaining any limitations.
 3. If the user's input is unclear or seems like unrelated gibberish, politely ask for clarification.
 
-Please process the user's input and provide a helpful response based on your capabilities and knowledge. """ 
-        response = llm(system_prompt , prompt)
+Please process the user's input within the <user> tags and provide a helpful response based on your capabilities and knowledge.
+</system>
+
+<user>
+{user_input}
+</user>
+"""
+        response = llm(system_prompt.format(user_input=prompt))
         # Display assistant response in chat message container
         with st.chat_message("assistant"):
             st.markdown(response)
@@ -377,27 +384,12 @@ Please process the user's input and provide a helpful response based on your cap
         st.session_state.messages.append({"role": "assistant", "content": response})
 
 
+footer_html = """
+<div style='text-align: center; margin-top: -10px;'> 
+    <p style='font-size: 12px;'>
+        👋 This is a demo app using amazing open-source LLMs from Hugging Face 🤗.
+    </p>
+</div>
+"""
 
-# Add this near the end of your script, after all other content
-
-st.markdown(
-    """
-    <style>
-    .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: #f1f1f1;
-        color: black;
-        text-align: center;
-        padding: 10px;
-        font-size: 14px;
-    }
-    </style>
-    <div class="footer">
-        This is just for Demo & API is consumed from HuggingFace
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+st.markdown(footer_html, unsafe_allow_html=True)
