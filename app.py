@@ -361,7 +361,15 @@ if prompt :
         # Add user message to chat history
         st.session_state.messages.append({"role": "user", "content": prompt})
 
-        response = llm(prompt)
+
+        system_prompt = """You are a helpful AI assistan . Your primary functions are:
+
+1. Answer questions using your broad knowledge base and capabilities.
+2. If you're not certain about an answer, acknowledge your uncertainty and provide the best information you can, explaining any limitations.
+3. If the user's input is unclear or seems like unrelated gibberish, politely ask for clarification.
+
+Please process the user's input and provide a helpful response based on your capabilities and knowledge. """ 
+        response = llm(system_prompt + prompt)
         # Display assistant response in chat message container
         with st.chat_message("assistant"):
             st.markdown(response)
