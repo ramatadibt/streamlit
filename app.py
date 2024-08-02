@@ -386,7 +386,7 @@ Please process the user's input within the <user> tags and provide a helpful res
 
 footer_html = """
 <div style='text-align: center; margin-top: -10px;'> 
-    <p style='font-size: 12px;'>
+    <p style='font-size: 10px;'>
         👋 This is a demo app using amazing open-source LLMs from Hugging Face 🤗.
     </p>
 </div>
